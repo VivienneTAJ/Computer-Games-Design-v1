@@ -9,10 +9,15 @@ public class EquipmentManager : MonoBehaviour
     public static EquipmentManager instance;
     private void Awake()
     {
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one instance of Equipment slots found!");
+            return;
+        }
         instance = this;
     }
     #endregion
-    public static Equipment[] currentEquipment;
+    [SerializeField]public static Equipment[] currentEquipment;
 
     public delegate void OnEquipmentChanged(Equipment newItem, Equipment oldItem);
     public OnEquipmentChanged onEquipmentChangedCallback;
@@ -47,12 +52,6 @@ public class EquipmentManager : MonoBehaviour
         }
 
         currentEquipment[slotIndex] = newEquipment;
-
-
-        //icon.sprite = newEquipment.icon;
-        //icon.enabled = true;
-        //removeButton.interactable = true;
-
     }
     public void Unequip(int slotIndex)
     {
@@ -67,7 +66,6 @@ public class EquipmentManager : MonoBehaviour
             }
 
             currentEquipment[slotIndex] = null;
-            EquipSlot.slotIndex = slotIndex;
 
             //icon.sprite = null;
             //icon.enabled = false;

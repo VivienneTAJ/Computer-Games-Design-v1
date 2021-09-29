@@ -5,9 +5,9 @@ using UnityEngine;
 public class EquipmentUI : MonoBehaviour
 {
     public Transform itemsParent;
-    EquipmentManager equipmentManager;
-    EquipSlot[] slots;
-    Equipment newEquipment;
+    public EquipmentManager equipmentManager;
+    public EquipSlot[] slots;
+    public Equipment newEquipment;
 
     void Start()
     {

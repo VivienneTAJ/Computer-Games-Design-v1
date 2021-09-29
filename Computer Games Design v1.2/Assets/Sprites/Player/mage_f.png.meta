@@ -1,43 +1,43 @@
 fileFormatVersion: 2
-guid: c183fbcb24a85b244a0796a5a397f249
+guid: deb53d5d9c650da43bb7614037c4e38b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2434084959341843947
-    second: Walk_Up_1
+      213: 3035956014389385451
+    second: mage_f_0
   - first:
-      213: -8127089093447096159
-    second: Walk_Up_2
+      213: -1840796745116526119
+    second: mage_f_1
   - first:
-      213: -2556676504124109229
-    second: Walk_Up_3
+      213: -3473850890814938842
+    second: mage_f_2
   - first:
-      213: -3329408372849862030
-    second: Walk_Right_1
+      213: 1093572010777171010
+    second: mage_f_3
   - first:
-      213: 1806121514897478964
-    second: Walk_Right_2
+      213: 5410999710358226974
+    second: mage_f_4
   - first:
-      213: -1133624952925587247
-    second: Walk_Right_3
+      213: -4546658491801900177
+    second: mage_f_5
   - first:
-      213: -9175259530965006922
-    second: Walk_Down_1
+      213: 5497770196610201028
+    second: mage_f_6
   - first:
-      213: 1972975897321587268
-    second: Walk_Down_2
+      213: 5975225309399005822
+    second: mage_f_7
   - first:
-      213: 7344023052323058618
-    second: Walk_Down_3
+      213: -2815214010226330014
+    second: mage_f_8
   - first:
-      213: -2855072830066243073
-    second: Walk_Left_1
+      213: -4354493025541092856
+    second: mage_f_9
   - first:
-      213: -9135099228042401203
-    second: Walk_Left_2
+      213: 7485127329307492290
+    second: mage_f_10
   - first:
-      213: 2164904967419400146
-    second: Walk_Left_3
+      213: -3330833663053674637
+    second: mage_f_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -123,253 +123,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walk_Up_1
+      name: mage_f_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 2
         y: 108
         width: 28
         height: 34
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51aee4530a4683ed0800000000000000
-      internalID: -2434084959341843947
+      spriteID: be8d36fe8e1e12a20800000000000000
+      internalID: 3035956014389385451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Up_2
+      name: mage_f_1
       rect:
         serializedVersion: 2
-        x: 35
+        x: 34
         y: 110
         width: 28
         height: 34
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a862275787c63f80800000000000000
-      internalID: -8127089093447096159
+      spriteID: 9d952affc1d2476e0800000000000000
+      internalID: -1840796745116526119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Up_3
+      name: mage_f_2
       rect:
         serializedVersion: 2
-        x: 69
+        x: 66
         y: 108
-        width: 26
+        width: 28
         height: 34
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35e481ee34cd48cd0800000000000000
-      internalID: -2556676504124109229
+      spriteID: 6212d4225076acfc0800000000000000
+      internalID: -3473850890814938842
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Right_1
+      name: mage_f_3
       rect:
         serializedVersion: 2
-        x: 3
+        x: 2
         y: 72
-        width: 24
+        width: 28
         height: 34
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27a921099b09bc1d0800000000000000
-      internalID: -3329408372849862030
+      spriteID: 244dea623f52d2f00800000000000000
+      internalID: 1093572010777171010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Right_2
+      name: mage_f_4
       rect:
         serializedVersion: 2
-        x: 35
+        x: 34
         y: 74
-        width: 22
+        width: 28
         height: 34
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43597a4d2f1a01910800000000000000
-      internalID: 1806121514897478964
+      spriteID: e18c4af519bb71b40800000000000000
+      internalID: 5410999710358226974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Right_3
+      name: mage_f_5
       rect:
         serializedVersion: 2
-        x: 67
+        x: 66
         y: 72
-        width: 22
+        width: 28
         height: 34
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d8f95c8c1e8440f0800000000000000
-      internalID: -1133624952925587247
+      spriteID: f6b6221e03607e0c0800000000000000
+      internalID: -4546658491801900177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Down_1
+      name: mage_f_6
       rect:
         serializedVersion: 2
-        x: 3
+        x: 2
         y: 36
         width: 28
         height: 34
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b540d6b11eeaa080800000000000000
-      internalID: -9175259530965006922
+      spriteID: 4c53ea98dd00c4c40800000000000000
+      internalID: 5497770196610201028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Down_2
+      name: mage_f_7
       rect:
         serializedVersion: 2
-        x: 35
+        x: 34
         y: 38
         width: 28
         height: 34
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 442c246102b616b10800000000000000
-      internalID: 1972975897321587268
+      spriteID: e7ab6a3c2c34ce250800000000000000
+      internalID: 5975225309399005822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Down_3
+      name: mage_f_8
       rect:
         serializedVersion: 2
-        x: 69
+        x: 66
         y: 36
-        width: 26
+        width: 28
         height: 34
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab3fef74e063be560800000000000000
-      internalID: 7344023052323058618
+      spriteID: 266b1c9f5c95ee8d0800000000000000
+      internalID: -2815214010226330014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Left_1
+      name: mage_f_9
       rect:
         serializedVersion: 2
-        x: 9
+        x: 2
         y: 0
-        width: 22
+        width: 28
         height: 34
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff9480c436eb068d0800000000000000
-      internalID: -2855072830066243073
+      spriteID: 80a05b31aabb193c0800000000000000
+      internalID: -4354493025541092856
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Left_2
+      name: mage_f_10
       rect:
         serializedVersion: 2
-        x: 41
+        x: 34
         y: 2
-        width: 22
+        width: 28
         height: 34
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4a6694e6ab993180800000000000000
-      internalID: -9135099228042401203
+      spriteID: 2cff0f9e5a380e760800000000000000
+      internalID: 7485127329307492290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Left_3
+      name: mage_f_11
       rect:
         serializedVersion: 2
-        x: 71
+        x: 66
         y: 0
-        width: 24
+        width: 28
         height: 34
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2df038309994b0e10800000000000000
-      internalID: 2164904967419400146
+      spriteID: 377c5c35e6086c1d0800000000000000
+      internalID: -3330833663053674637
       vertices: []
       indices: 
       edges: []
@@ -377,7 +377,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 79552da8f17cfaf44b56451cf18612bf
+    spriteID: 7baee2fcdd25b98429f0ad46299a34ce
     internalID: 0
     vertices: []
     indices: 

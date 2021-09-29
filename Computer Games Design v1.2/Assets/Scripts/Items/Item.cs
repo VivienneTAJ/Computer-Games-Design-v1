@@ -11,9 +11,23 @@ public class Item : ScriptableObject
     {
         //Use the item
         Debug.Log("Using " + name);
+
+        switch (name)
+        {
+            case "Health Potion": HealthPotion(); break;
+        }
+        //ADD WHATEVER THE ITEM DOES HERE
+
+        Inventory.instance.Remove(this);
     }
     public void RemoveFromInventory()
     {
         Inventory.instance.Remove(this);
+    }
+
+    public void HealthPotion()
+    {
+        PlayerHealth health = Player.instance.GetComponent<PlayerHealth>();
+        health.TakeDamage(health.healthPerHeart);
     }
 }
