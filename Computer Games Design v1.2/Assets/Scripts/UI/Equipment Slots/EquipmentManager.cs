@@ -17,25 +17,32 @@ public class EquipmentManager : MonoBehaviour
         instance = this;
     }
     #endregion
-    [SerializeField]public static Equipment[] currentEquipment;
 
-    public delegate void OnEquipmentChanged(Equipment newItem, Equipment oldItem);
+    public Equipment[] currentEquipment;
+
+    public delegate void OnEquipmentChanged(/*Equipment newItem, Equipment oldItem*/);
     public OnEquipmentChanged onEquipmentChangedCallback;
-
     Inventory inventory;
     private void Start()
     {
         inventory = Inventory.instance;
         int numberOfSlots = System.Enum.GetNames(typeof(EquipmentSlot)).Length;
         currentEquipment = new Equipment[numberOfSlots];
+
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            UnequipAll();
-        }
-    }
+
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.U))
+    //    {
+    //        UnequipAll();
+    //    }
+
+    //    // set equipslot[0] item = currentEquipment[0]
+    //    // set equipslot[1] item = currentEquipment[1]
+    //}
+
+
     public void Equip(Equipment newEquipment)
     {
         int slotIndex = (int)newEquipment.equipmentSlot;
@@ -43,15 +50,24 @@ public class EquipmentManager : MonoBehaviour
         if (currentEquipment[slotIndex] != null)
         {
             oldItem = currentEquipment[slotIndex];
-            inventory.Add(oldItem);
-        }
-
-        if(onEquipmentChangedCallback != null)
-        {
-            onEquipmentChangedCallback.Invoke(newEquipment, oldItem);
+            inventory.Add(oldItem);          
         }
 
         currentEquipment[slotIndex] = newEquipment;
+
+        //WORKS UP TO HERE!!
+
+        if (onEquipmentChangedCallback != null)
+        {
+            EquipmentUI.newEquipment = newEquipment;
+            EquipmentUI.slotIndex = slotIndex;
+            EquipmentUI.addItem = true;
+            onEquipmentChangedCallback.Invoke();
+        }
+        
+        //icon.sprite = null;
+        //icon.enabled = false;
+        //removeButton.interactable = false;
     }
     public void Unequip(int slotIndex)
     {
@@ -60,16 +76,12 @@ public class EquipmentManager : MonoBehaviour
             Equipment oldItem = currentEquipment[slotIndex];
             inventory.Add(oldItem);
 
-            if (onEquipmentChangedCallback != null)
-            {
-                onEquipmentChangedCallback.Invoke(null, oldItem);
-            }
-
             currentEquipment[slotIndex] = null;
 
-            //icon.sprite = null;
-            //icon.enabled = false;
-            //removeButton.interactable = false;
+            if (onEquipmentChangedCallback != null)
+            {
+                onEquipmentChangedCallback.Invoke();
+            }       
         }
     }
     public void UnequipAll()

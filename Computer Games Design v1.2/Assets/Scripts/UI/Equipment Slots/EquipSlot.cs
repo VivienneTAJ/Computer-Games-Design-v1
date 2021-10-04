@@ -5,30 +5,32 @@ public class EquipSlot : MonoBehaviour
 {
     public Image icon;
     public Button removeButton;
-    Equipment equipment;
+    public Equipment equipment;
     public static int slotIndex;
 
     public void AddItem(int slotIndex)
     {
         //slotIndex = (int)newEquipment.equipmentSlot;
         //equipment = newEquipment;
+        //slotIndex = EquipmentManager.currentEquipment[];
 
+        equipment = EquipmentUI.newEquipment;
         icon.sprite = equipment.icon;
         icon.enabled = true;
         removeButton.interactable = true;
     }
-    public void ClearSlot()
+    public void ClearSlot(int slotindex)
     {
-
-       // equipment = null;
-
+        equipment = null;
         icon.sprite = null;
         icon.enabled = false;
         removeButton.interactable = false;
     }
     public void OnRemoveButton()
     {
+        //equipment = EquipmentUI.newEquipment;
         EquipmentManager.instance.Unequip(((int)equipment.equipmentSlot));
+        ClearSlot(((int)equipment.equipmentSlot));
     }
     public void UseItem()
     {

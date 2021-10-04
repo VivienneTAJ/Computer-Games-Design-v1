@@ -5,7 +5,6 @@ public class InventoryUI : MonoBehaviour
     public Transform itemsParent;
     Inventory inventory;
     InventorySlot[] slots;
-
     void Start()
     {
         inventory = Inventory.instance;

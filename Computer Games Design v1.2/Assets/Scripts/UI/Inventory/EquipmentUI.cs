@@ -1,25 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EquipmentUI : MonoBehaviour
 {
     public Transform itemsParent;
     public EquipmentManager equipmentManager;
     public EquipSlot[] slots;
-    public Equipment newEquipment;
+    public static Equipment newEquipment;
+    public static int slotIndex;
+    public static bool addItem = false;
 
     void Start()
-    {
+    {        
         equipmentManager = EquipmentManager.instance;
-        //equipmentManager.onEquipmentChangedCallback += UpdateUI;
+        equipmentManager.onEquipmentChangedCallback += UpdateUI;
         slots = itemsParent.GetComponentsInChildren<EquipSlot>();
     }
     void UpdateUI()
     {
-        for (int i = 0; i < slots.Length; i++)
+        if (addItem)
         {
-            slots[i].AddItem((int)newEquipment.equipmentSlot);
+            newEquipment = equipmentManager.currentEquipment[slotIndex];
+            slots[slotIndex].AddItem(slotIndex);
+            addItem = false;
         }
     }
 }
