@@ -25,78 +25,81 @@ public class PlayerGridMovement : MonoBehaviour
         playerRotation = this.transform.rotation;
     }
     void Update()
-    {     
+    {
         //COULD STILL BE ADJUSTED? -  Player slides along boundary edge when keys spammed
-        if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") > 0)
+        if (!PauseMenu.gameIsPaused)
         {
-            if (!isMoving && PlayerCheckGrounded.canMoveU && PlayerCollision.canMoveU)
+            if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") > 0)
             {
-                animator.SetFloat("Horizontal", 0);
-                animator.SetFloat("Vertical", 1);
+                if (!isMoving && PlayerCheckGrounded.canMoveU && PlayerCollision.canMoveU)
+                {
+                    animator.SetFloat("Horizontal", 0);
+                    animator.SetFloat("Vertical", 1);
 
-                StartCoroutine(MovePlayer(Vector3.forward));
-                StartCoroutine(familiarGridMovement.MoveFamiliar(Vector3.forward));
-                previousDirection = Directions.Up;
+                    StartCoroutine(MovePlayer(Vector3.forward));
+                    StartCoroutine(familiarGridMovement.MoveFamiliar(Vector3.forward));
+                    previousDirection = Directions.Up;
+                }
+                else if (!PlayerCheckGrounded.canMoveU || !PlayerCollision.canMoveU)
+                {
+                    animator.SetFloat("Horizontal", 0);
+                    animator.SetFloat("Vertical", 1);
+                }
             }
-            else if(!PlayerCheckGrounded.canMoveU || !PlayerCollision.canMoveU)
+            if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") < 0)
             {
-                animator.SetFloat("Horizontal", 0);
-                animator.SetFloat("Vertical", 1);
-            }
-        }
-        if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") < 0)
-        {
-            if (!isMoving && PlayerCheckGrounded.canMoveD && PlayerCollision.canMoveD)
-            {
-                animator.SetFloat("Horizontal", 0);
-                animator.SetFloat("Vertical", -1);
+                if (!isMoving && PlayerCheckGrounded.canMoveD && PlayerCollision.canMoveD)
+                {
+                    animator.SetFloat("Horizontal", 0);
+                    animator.SetFloat("Vertical", -1);
 
-                StartCoroutine(MovePlayer(Vector3.back));
-                StartCoroutine(familiarGridMovement.MoveFamiliar(Vector3.back));
-                previousDirection = Directions.Down;
+                    StartCoroutine(MovePlayer(Vector3.back));
+                    StartCoroutine(familiarGridMovement.MoveFamiliar(Vector3.back));
+                    previousDirection = Directions.Down;
+                }
+                else if (!PlayerCheckGrounded.canMoveD || !PlayerCollision.canMoveD)
+                {
+                    animator.SetFloat("Horizontal", 0);
+                    animator.SetFloat("Vertical", -1);
+                }
             }
-            else if(!PlayerCheckGrounded.canMoveD || !PlayerCollision.canMoveD)
+            if (Input.GetAxisRaw("Horizontal") < 0 && Input.GetAxisRaw("Vertical") == 0)
             {
-                animator.SetFloat("Horizontal", 0);
-                animator.SetFloat("Vertical", -1);
-            }
-        }
-        if (Input.GetAxisRaw("Horizontal") < 0 && Input.GetAxisRaw("Vertical") == 0)
-        {           
-            if (!isMoving && PlayerCheckGrounded.canMoveL && PlayerCollision.canMoveL)
-            {
-                animator.SetFloat("Horizontal", -1);
-                animator.SetFloat("Vertical", 0);
+                if (!isMoving && PlayerCheckGrounded.canMoveL && PlayerCollision.canMoveL)
+                {
+                    animator.SetFloat("Horizontal", -1);
+                    animator.SetFloat("Vertical", 0);
 
-                StartCoroutine(MovePlayer(Vector3.left));
-                StartCoroutine(familiarGridMovement.MoveFamiliar(Vector3.left));
-                previousDirection = Directions.Left;
+                    StartCoroutine(MovePlayer(Vector3.left));
+                    StartCoroutine(familiarGridMovement.MoveFamiliar(Vector3.left));
+                    previousDirection = Directions.Left;
+                }
+                else if (!PlayerCheckGrounded.canMoveL || !PlayerCollision.canMoveL)
+                {
+                    animator.SetFloat("Horizontal", -1);
+                    animator.SetFloat("Vertical", 0);
+                }
             }
-            else if(!PlayerCheckGrounded.canMoveL || !PlayerCollision.canMoveL)
+            if (Input.GetAxisRaw("Horizontal") > 0 && Input.GetAxisRaw("Vertical") == 0)
             {
-                animator.SetFloat("Horizontal", -1);
-                animator.SetFloat("Vertical", 0);
-            }
-        }
-        if (Input.GetAxisRaw("Horizontal") > 0 && Input.GetAxisRaw("Vertical") == 0)
-        {           
-            if (!isMoving && PlayerCheckGrounded.canMoveR && PlayerCollision.canMoveR)
-            {
-                animator.SetFloat("Horizontal", 1);
-                animator.SetFloat("Vertical", 0);
+                if (!isMoving && PlayerCheckGrounded.canMoveR && PlayerCollision.canMoveR)
+                {
+                    animator.SetFloat("Horizontal", 1);
+                    animator.SetFloat("Vertical", 0);
 
-                StartCoroutine(MovePlayer(Vector3.right));
-                StartCoroutine(familiarGridMovement.MoveFamiliar(Vector3.right));
-                previousDirection = Directions.Right;
+                    StartCoroutine(MovePlayer(Vector3.right));
+                    StartCoroutine(familiarGridMovement.MoveFamiliar(Vector3.right));
+                    previousDirection = Directions.Right;
+                }
+                else if (!PlayerCheckGrounded.canMoveR || !PlayerCollision.canMoveR)
+                {
+                    animator.SetFloat("Horizontal", 1);
+                    animator.SetFloat("Vertical", 0);
+                }
             }
-            else if (!PlayerCheckGrounded.canMoveR || !PlayerCollision.canMoveR)
-            {
-                animator.SetFloat("Horizontal", 1);
-                animator.SetFloat("Vertical", 0);
-            }           
         }
         animator.SetBool("IsMoving", isMoving);
-        familiarGridMovement.animator.SetBool("IsMoving", isMoving);        
+        familiarGridMovement.animator.SetBool("IsMoving", isMoving);
     }
 
     private IEnumerator MovePlayer(Vector3 direction)

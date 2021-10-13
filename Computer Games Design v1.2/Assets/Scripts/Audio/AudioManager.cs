@@ -1,44 +1,54 @@
 ﻿using UnityEngine.Audio;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
-    public Sound[] sounds;
-    public static AudioManager instance;
+    public AudioSource BGM;
 
-    void Awake()
+    private void Start()
     {
-        if(instance == null)
-        {
-            instance = this;
-        }
-        else
+        BGM = this.GetComponent<AudioSource>();
+        DontDestroyOnLoad(gameObject);
+        if (FindObjectsOfType<AudioManager>().Length > 1)
         {
             Destroy(gameObject);
-            return;
-        }
-        DontDestroyOnLoad(gameObject);
-        foreach (Sound s in sounds)
-        {
-            s.source = gameObject.AddComponent<AudioSource>();
-            s.source.clip = s.clip;
-            s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
-            s.source.loop = s.loop;
         }
     }
-    void Start()
+    public void ChangeBGM(AudioClip music)
     {
-        Play("MainTheme");
-    }
-    public void Play(string name) //FindObjectOfType<AudioManager>().Play("YOUR SOUND NAME HERE"); - ADD THIS WHERE YOU WANT SOUND PLAYED
-    {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if(s == null)
+        if (BGM.clip.name == music.name)
         {
             return;
         }
-        s.source.Play();
+        BGM.Stop();
+        BGM.clip = music;
+        BGM.Play();
+
+        //FADING AMBIENT AUDIO INTO EACH OTHER - SEE HOW THIS SOUNDS - CURRENTLY NOT WORKING
+
+        //float timeToFade = 1.25f;
+        //float timeElapsed = 0;
+        //if (newBGM.clip.name == music.name)
+        //{
+        //    return;
+        //}
+        //else
+        //{
+        //    oldBGM.clip = newBGM.clip;
+        //    newBGM.clip = music;
+
+        //    newBGM.Play();
+        //    while (timeElapsed < timeToFade)
+        //    {
+        //        newBGM.volume = Mathf.Lerp(0, 1, timeToFade);
+        //        oldBGM.volume = Mathf.Lerp(1, 0, timeToFade);
+        //        timeElapsed += Time.deltaTime;
+        //    }
+        //    oldBGM.Stop();
+        //}
+
     }
 }

@@ -5,10 +5,11 @@ using TMPro;
 
 public class CoinsCollected : MonoBehaviour
 {
-    public static int coinsCollected = 0;
+    public static int coinsCollected;
     public static TextMeshProUGUI coinsText;
     private void Awake()
     {
+        coinsCollected = 0;
         coinsText = GetComponent<TextMeshProUGUI>();
         coinsText.text = "Coins: " + coinsCollected.ToString();
     }
