@@ -16,13 +16,13 @@ MonoBehaviour:
   m_AdvancedMode: 0
   lift:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.9172457, z: 0.9613884, w: 0}
+    m_Value: {x: 1, y: 0.93029946, z: 0.9902064, w: 0}
   gamma:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 0.93479973, z: 0.9866625, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.92233056, z: 0.9539653, w: 0}
   gain:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.93413377, z: 0.8683479, w: -0.0000000024328426}
+    m_Value: {x: 1, y: 0.9421104, z: 0.81174195, w: 0.076726325}
 --- !u!114 &-4252689705840122513
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -63,6 +63,11 @@ MonoBehaviour:
   highQualityFiltering:
     m_OverrideState: 1
     m_Value: 1
+  skipIterations:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 16
   dirtTexture:
     m_OverrideState: 0
     m_Value: {fileID: 0}

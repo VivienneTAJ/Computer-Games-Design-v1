@@ -15,8 +15,6 @@ public class DugeonGenerator
         this.dungeonLength = dungeonLength;
     }
 
-
-
     public List<Node> CalculateDungeon(int maxIterations, int roomWidthMin, int roomLengthMin, float roomBottomCornerModifier, float roomTopCornerMidifier, int roomOffset, int corridorWidth)
     {
         BinarySpacePartitioner bsp = new BinarySpacePartitioner(dungeonWidth, dungeonLength);
