@@ -13,8 +13,7 @@ public class PlayerGridMovement : MonoBehaviour
     private bool isMoving;
 
     public FamiliarGridMovement familiarGridMovement;
-    public static Directions previousDirection;
-
+    public static Directions previousDirection; 
     public float rayLength = 1.4f;
 
     void Awake()

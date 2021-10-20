@@ -122,47 +122,23 @@ public class DungeonCreator : MonoBehaviour
         mesh.RecalculateNormals();
 
         GameObject dungeonFloor = new GameObject("Mesh" + bottomLeftCorner, typeof(MeshFilter), typeof(MeshRenderer));
+        dungeonFloor.tag = "Floor";
         dungeonFloor.AddComponent<ScaleTexture>().go = dungeonFloor;
         dungeonFloor.GetComponent<MeshFilter>().mesh = mesh;
         dungeonFloor.GetComponent<MeshRenderer>().material = floorMaterial;
         dungeonFloor.transform.position = Vector3.zero;
         dungeonFloor.transform.localScale = Vector3.one;
         dungeonFloor.transform.parent = transform;
+
+        MeshFilter mf = dungeonFloor.GetComponent<MeshFilter>();
+        if (mf && mf.sharedMesh)
+        {
+            Bounds bounds = mf.sharedMesh.bounds;
+            BoxCollider collider = mf.gameObject.AddComponent<BoxCollider>();
+            collider.center = new Vector3(bounds.center.x, 0.5f, bounds.center.z);
+            collider.size = new Vector3(bounds.size.x - 1, 1f, bounds.size.z - 1);
+        }
     }
-
-    private void GeneratePlane()
-    {
-        Vector3[] vertices = new Vector3[4];
-        Vector2[] uv = new Vector2[4];
-        int[] triangles = new int[6];
-
-        vertices[0] = new Vector3(0, 1);
-        vertices[1] = new Vector3(1, 1);
-        vertices[2] = new Vector3(0, 0);
-        vertices[3] = new Vector3(1, 0);
-
-        uv[0] = new Vector2(0, 1);
-        uv[1] = new Vector2(1, 1);
-        uv[2] = new Vector2(0, 0);
-        uv[3] = new Vector2(1, 0);
-
-        triangles[0] = 0;
-        triangles[1] = 1;
-        triangles[2] = 2;
-        triangles[3] = 2;
-        triangles[4] = 1;
-        triangles[5] = 3;
-
-        Mesh mesh = new Mesh();
-        mesh.vertices = vertices;
-        mesh.uv = uv;
-        mesh.triangles = triangles;
-
-        GameObject gameObject = new GameObject("TestPlane", typeof(MeshFilter), typeof(MeshRenderer));
-        gameObject.GetComponent<MeshFilter>().mesh = mesh;
-        gameObject.GetComponent<MeshRenderer>().material = floorMaterial;
-    }
-
     private void AddWallPositionToList(Vector3 wallPosition, List<Vector3Int> wallList, List<Vector3Int> doorList)
     {
         Vector3Int point = Vector3Int.CeilToInt(wallPosition);
