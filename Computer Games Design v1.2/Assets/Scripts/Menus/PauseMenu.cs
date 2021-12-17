@@ -8,10 +8,10 @@ public class PauseMenu : MonoBehaviour
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI, optionsMenuUI, gameUI;
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !optionsMenuUI.activeInHierarchy)
-        {           
+        {
             if (gameIsPaused)
             {
                 Resume();

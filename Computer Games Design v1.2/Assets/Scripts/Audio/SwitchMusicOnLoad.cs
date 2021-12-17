@@ -12,18 +12,9 @@ public class SwitchMusicOnLoad : MonoBehaviour
     void Start()
     {
         audioManager = FindObjectOfType<AudioManager>();
-
         if (newTrack != null)
         {
-            //audioManager.newBGM = this.GetComponent<AudioSource>();
             audioManager.ChangeBGM(newTrack);
         }
-        StartCoroutine(ChangeScene());
-    }
-
-    IEnumerator ChangeScene()
-    {
-        musicAnim.SetTrigger("Fade Out");
-        yield return new WaitForSeconds(waitTime);
     }
 }
